@@ -1,0 +1,209 @@
+﻿@page
+@model MejosDental.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home";
+    ViewData["Styles"] = "home.css";
+}
+
+<!-- Landing Section -->
+<section class="landing">
+    <h1>Enjoy the beauty of a healthy smile</h1>
+    <p>Dra. Marife Mejos-Dacong</p>
+    <input type="button" value="Make an Appointment" onclick="location.href='appointment'" />
+
+    <div class="social-icons">
+        <a href="#"><img src="~/pic/fb.png" alt="Facebook" width="30" /></a>
+        <a href="#"><img src="~/pic/phone.png" alt="Phone" width="30" /></a>
+    </div>
+</section>
+
+<!-- About Us Section -->
+<section id="AboutUs" class="AboutUs">
+    <div class="container text-center">
+        <h1 class="text-center p-0 mb-1 mt-5">Welcome to Mejos Dental Clinic</h1>
+
+        <div id="carouselExampleIndicators" class="carousel slide custom-carousel mx-auto" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="~/pic/lobby.jpg" class="d-block mt-2 w-100 carousel-img" alt="lobby" />
+                </div>
+                <div class="carousel-item">
+                    <img src="~/pic/out.jpg" class="d-block mt-2 w-100 carousel-img" alt="out" />
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <div class="w-100 p-2 mb-3 mt-1 custom-text mx-auto">
+            <p class="fs-6">
+                At Mejos Dental Clinic, we are committed to providing exceptional dental care to help you achieve and maintain the smile of your dreams...
+            </p>
+        </div>
+    </div>
+
+    <h2 class="text-center p-5 mb-2 mt-3">Know more!</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="bg-secondary text-white p-5 mt-2 mb-5">
+                <h2>Expert Solutions</h2>
+                <p>We provide a wide range of dental services, from preventive care to advanced treatments...</p>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="bg-secondary text-white p-5 mt-2 mb-5">
+                <h2>Compassionate Care</h2>
+                <p>At Mejos Dental Clinic, we prioritize your comfort and well-being...</p>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="bg-secondary text-white p-5 mt-2 mb-5">
+                <h2>Your Perfect Smile</h2>
+                <p>Our mission is to help you achieve a healthy, beautiful smile...</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>Meet Our Team</h2>
+    <div class="team-container">
+        @{
+            var teamMembers = new[]
+            {
+                new { Img = "assistant.jpg", Name = "Sheila Orapa", Role = "Dental Assistant", Desc = "Assists dentists during procedures." },
+                new { Img = "team1.png", Name = "Dra. Marife Mejos", Role = "Head Dentist", Desc = "Expert in general dentistry and patient care." },
+                new { Img = "assistant.jpg", Name = "Monica Sandajan", Role = "Dental Assistant", Desc = "Assists dentists during procedures." }
+            };
+        }
+
+        @foreach (var member in teamMembers)
+        {
+            <div class="team-member">
+                <div class="card_meet">
+                    <div class="front">
+                        <img src="~/pic/@member.Img" alt="@member.Name" />
+                        <h3>@member.Name</h3>
+                        <p>@member.Role</p>
+                    </div>
+                    <div class="back">
+                        <p>@member.Desc</p>
+                        <div class="soclink">
+                            <a href="#">🔗</a><a href="#">🐦</a><a href="#">📘</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="Services">
+    <h2 id="Special" class="fs-1 p-2 mt-4 mb-5 text-center">Special Offers!</h2>
+    <div class="row g-4">
+        @{
+            var offers = new[]
+            {
+                new { Img = "bunot.jpg", Title = "Tooth Extraction", Text = "for only PHP 500!" },
+                new { Img = "dentures.jpeg", Title = "Dentures", Text = "Starts at PHP 10,000 only!" },
+                new { Img = "braces.jpg", Title = "Teeth Braces", Text = "for only PHP 1,000 monthly!" },
+                new { Img = "cleaning.png", Title = "Teeth Cleaning", Text = "for only PHP 500" }
+            };
+        }
+
+        @foreach (var offer in offers)
+        {
+            <div class="col-12 col-md-3">
+                <div class="card">
+                    <img src="~/pic/@offer.Img" class="card-img-top" alt="@offer.Title" />
+                    <div class="card-body">
+                        <h5 class="card-title">@offer.Title</h5>
+                        <p class="card-text">@offer.Text</p>
+                        <a href="appointment" class="btn btn-book">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- Full Services Section -->
+<section id="Services" class="Services">
+    <h2 class="fs-1 p-2 mt-5 mb-5 text-center">Services</h2>
+    <div class="row g-4">
+        @{
+            var services = new[]
+            {
+                new { Img = "pano.png", Title = "Panoramic Xray", Desc = "We use panoramic X-rays to get a full view of your teeth and jaw..." },
+                new { Img = "check.png", Title = "Dental Consultation", Desc = "We listen to your concerns and create a treatment plan..." },
+                new { Img = "restoration.png", Title = "Tooth Restoration", Desc = "We restore damaged or decayed teeth with care..." },
+                new { Img = "wisdom.png", Title = "Wisdom Tooth Removal", Desc = "We safely remove problematic wisdom teeth..." },
+                new { Img = "rootcanal.png", Title = "Root Canal Treatment", Desc = "We save damaged or infected teeth with precise treatment..." },
+                new { Img = "veneers.png", Title = "Veneers", Desc = "We enhance your smile with custom veneers..." },
+                new { Img = "whitening.png", Title = "Teeth Whitening", Desc = "Brighten your smile with safe and effective treatments..." },
+                new { Img = "jacket.png", Title = "Jacket Crowns", Desc = "Restore and protect damaged teeth with durable crowns..." },
+                new { Img = "retainers.png", Title = "Retainers", Desc = "Maintain your smile with high-quality retainers..." }
+            };
+        }
+
+        @foreach (var svc in services)
+        {
+            <div class="col-12 col-md-4">
+                <div class="card service-card">
+                    <img src="~/pic/@svc.Img" class="card-img-top" alt="@svc.Title" />
+                    <div class="card-body">
+                        <h5 class="card-title">@svc.Title</h5>
+                        <p class="card-text">@svc.Desc</p>
+                        <a href="appointment" class="btn btn-book">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer id="Contact" class="mt-5">
+    <div class="row text-white bg-dark p-4">
+        <div class="col-md-3">
+            <h3>MEJOS Dental Clinic</h3>
+            <p>We provide compassionate care and quality dental services to help you achieve a healthy, beautiful smile.</p>
+        </div>
+        <div class="col-md-3">
+            <h3>Services</h3>
+            <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Home</a></li>
+                <li><a href="#AboutUs" class="text-white">About Us</a></li>
+                <li><a href="appointment" class="text-white">Appointment</a></li>
+                <li><a href="#Contact" class="text-white">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <h3>Contact Us</h3>
+            <p>&#128337; Monday - Sunday</p>
+            <p>&#9742; 0928 470 7069</p>
+            <p>&#127970; 475 Gondola Street Gate 2, San Francisco Village, Muzon, Taytay, Philippines</p>
+        </div>
+        <div class="col-md-3">
+            <h3>Location</h3>
+            <div class="ratio ratio-4x3">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18..." loading="lazy"></iframe>
+            </div>
+            <a href="appointment">
+                <button class="appointment-btn mt-2">Make an Appointment</button>
+            </a>
+        </div>
+    </div>
+    <div class="text-center text-white bg-black py-2">
+        &copy; 2024 MEJOS Dental Clinic | All Rights Reserved
+    </div>
+</footer>

@@ -1,0 +1,90 @@
+@page "{P_ID:int}"
+@model MejosDental.Pages.AddHistoryModel
+@{
+    ViewData["Title"] = "Add Medical History";
+}
+
+<h1 class="mb-4">Add Medical History</h1>
+
+<!-- Optional: Show the patient ID -->
+<p><strong>Patient ID:</strong> @Model.History.P_ID</p>
+
+<pre>
+@Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.History))
+</pre>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+
+<form method="post">
+    <!-- Hidden field for P_ID -->
+    <input asp-for="History.P_ID" type="hidden" />
+
+    <div class="mb-3">
+        <label asp-for="History.M_Date" class="form-label">Date</label>
+        <input asp-for="History.M_Date" type="date" class="form-control" />
+        <span asp-validation-for="History.M_Date" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="History.M_description" class="form-label">Description</label>
+        <textarea asp-for="History.M_description" class="form-control"></textarea>
+        <span asp-validation-for="History.M_description" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="History.M_dentist_name" class="form-label">Dentist Name</label>
+        <input asp-for="History.M_dentist_name" class="form-control" />
+        <span asp-validation-for="History.M_dentist_name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="History.M_diagnosis" class="form-label">Diagnosis</label>
+        <input asp-for="History.M_diagnosis" class="form-control" />
+        <span asp-validation-for="History.M_diagnosis" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="History.M_perform" class="form-label">Performed Treatment</label>
+        <input asp-for="History.M_perform" class="form-control" />
+        <span asp-validation-for="History.M_perform" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="History.M_result" class="form-label">Result</label>
+        <input asp-for="History.M_result" class="form-control" />
+        <span asp-validation-for="History.M_result" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="History.M_medication" class="form-label">Medication</label>
+        <input asp-for="History.M_medication" class="form-control" />
+        <span asp-validation-for="History.M_medication" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="History.M_note" class="form-label">Note</label>
+        <input asp-for="History.M_note" class="form-control" />
+        <span asp-validation-for="History.M_note" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="History.M_amount_paid" class="form-label">Amount Paid</label>
+        <input asp-for="History.M_amount_paid" type="number" class="form-control" min="0" step="0.01" />
+        <span asp-validation-for="History.M_amount_paid" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Add History</button>
+    <a asp-page="AdminAccnt" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

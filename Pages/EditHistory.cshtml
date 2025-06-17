@@ -1,0 +1,19 @@
+@page "{M_ID:int}"
+@model MejosDental.Pages.EditHistoryModel
+@{ ViewData["Title"] = "Edit History"; }
+
+<h1>Edit History</h1>
+<form method="post">
+  <div class="mb-3">
+    <label>Date</label>
+    <input asp-for="History.M_Date" type="date" class="form-control" />
+  </div>
+  <!-- Repeat for other fields similarly -->
+  <div class="mb-3">
+    <label>Description</label>
+    <textarea asp-for="History.M_description" class="form-control"></textarea>
+  </div>
+  <!-- ... -->
+  <button type="submit" class="btn btn-primary">Save</button>
+  <a asp-page="Admin" class="btn btn-secondary">Cancel</a>
+</form>

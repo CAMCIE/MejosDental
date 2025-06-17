@@ -1,0 +1,464 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+#navbar {
+  position: fixed; /* Fixes the navbar at the top */
+    top: 0; /* Aligns the navbar to the top of the page */
+    left: 0; /* Aligns the navbar to the left */
+    width: 100%; /* Ensures the navbar spans the full width of the page */
+    z-index: 1000; /* Ensures the navbar appears above other elements */
+    background: linear-gradient(127deg, rgba(245,249,248,1) 42%, rgb(255, 255, 255) 100%); /* Gradient background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow for better visibility */
+    
+}
+
+#navbar .navbar-brand img {
+  width: 80px;  /* Adjust logo size */
+  height: auto;
+}
+
+#navbar .navbar-nav .nav-link {
+  color: grey;  /* White text color for links */
+  font-size: 15px;  /* Increase font size for links */
+  font-weight: bold;  /* Make text bold */
+  padding: 10px 15px;  /* Add padding to links */
+  transition: color 0.3s ease, transform 0.3s ease;  /* Smooth transitions for hover effect */
+}
+
+/* Active link color */
+#navbar .navbar-nav .nav-link.active {
+  color: #147570;  /* Active link color */
+}
+
+/* Hover effect */
+#navbar .navbar-nav .nav-link:hover {
+  color: #147570;  /* Change color on hover */
+  transform: scale(1.05);  /* Slightly enlarge the link */
+}
+
+/* Navbar toggle button */
+#navbar .navbar-toggler {
+  border-color: #f26c27;  /* Border color of the toggle button */
+}
+
+#navbar .navbar-toggler-icon {
+  background-color: #f26c27;  /* Toggle icon color */
+}
+
+/* Collapse navbar items */
+#navbar .navbar-collapse {
+  text-align: center;  /* Center-align the navbar items */
+}
+
+#navbar .navbar-nav {
+  display: flex;
+  justify-content: center;  /* Center the navbar items horizontally */
+}
+
+#navbar .navbar-nav .nav-item {
+  margin: 0 15px;  /* Add spacing between nav items */
+}
+
+/* Navbar brand styling */
+#navbar .navbar-brand {
+  font-size: 1.5rem;  /* Larger font size for brand */
+  color: white !important;  /* Override any other colors */
+}
+/* Adjust Navbar on smaller screens */
+@media (max-width: 768px) {
+  #navbar .navbar-nav {
+      flex-direction: column;  /* Stack the navbar items vertically on small screens */
+      margin-top: 10px;  /* Space out the items a little bit */
+  }
+}
+body, html {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0; 
+    text-align: center;
+    background-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 53px;
+    scroll-padding-top: 90px; /* Adjust this value based on your navbar's height */
+}
+.landing {
+    background-color: #147570;
+    background-image: url(pic/bg.png);
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+    min-height: 500px;
+    border-radius: 50% 0%;
+    margin-bottom:50px;
+}
+.landing h1{
+    font-size: 2.5em;
+    margin: 0 0 20px;
+    font-family: 'Lora', serif;
+    margin-top: 50px;
+}
+
+.landing p{
+    margin: 0 0 30px;
+    font-size: 1.2em;
+}
+.landing input[type="button"] {
+    background-color: #f26c27; 
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.landing input[type="button"]:hover {
+    background-color: #ed834f; 
+    transform: scale(1.05); 
+}
+
+.landing input[type="button"]:active {
+    background-color: #ed9163; /* Even darker purple on click */
+    transform: scale(1);
+}
+.social-icons {
+    position: absolute;
+    bottom: 150px; /* Reduce this to bring icons closer */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+}
+
+.social-icons a:hover {
+    color: #f26c27;
+}
+  
+.Special {
+  text-align: center;
+  padding: 20px;
+}
+
+#Special {
+  display: inline-block;
+  font-size: 2.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #ff5722;
+  animation: scroll-text 8s linear infinite;
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+#Services {
+    font-size: 2.5rem;
+    padding: 2rem;
+    margin-top: 0;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  
+  .card {
+    width: 18rem;  /* Fixed width */
+    height: 380px; /* Fixed height */
+    padding: 20px;
+    background-color: #147570;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  /* Ensures the content is spaced evenly */
+    margin-left: 10px;
+    margin-right: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    border-radius: 8px; /* Optional: Rounds the corners */
+  }
+  
+  .card-img-top {
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover;
+  }
+  
+  .card-body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;/* Evenly spaces the card content */
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+  }
+
+  .card:hover {
+    background-color: #cddf70; /* Changes background color on hover */
+    transform: scale(1.05); /* Slightly enlarges the card on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deepens shadow on hover */
+  }
+  
+.service-card:hover {
+  background-color: #147570; /* Change to a slightly different color on hover */
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+.service-card {
+    width: 80%;
+    background-color: #147570;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    height: 100%;
+    margin-top: 20px; /* Space only on top */
+    margin-right: 15px; /* Space on the right */
+    margin-bottom: 20px; /* Space only on bottom */
+    margin-left: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    border-radius: 8px; /* Optional: Rounds the corners */
+  }
+
+  .service-card .card-img-top {
+    height: 100px;
+    object-fit: contain;
+  }
+
+  .service-card .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .btn-book {
+    background-color: #f26c27;
+    color: white;
+    border: none;
+    padding: 0.4rem; /* Reduced padding for smaller size */
+    font-size: 0.875rem; /* Smaller font size */
+  }
+  
+  .btn-book:hover {
+    background-color: #d85a1f;
+  }
+
+  .row.g-4 > [class*="col-"] {
+    display: flex;
+  }
+
+  .service-card {
+    margin: 0 20px;
+  }
+  .promo-card {
+    margin: 10px 0 !important; /* Adds spacing around the cards */
+  }
+  footer {
+    width: 100%;
+    background-color: #147570;
+    color: white;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    position: relative
+}
+
+footer .column {
+    flex: 1;
+    margin: 10px;
+    max-width: 300px;
+}
+
+
+footer .column h3 {
+    margin-top: 0;
+    font-family: 'Lora', serif;
+}
+
+footer .contact-info {
+    line-height: 1.8;
+}
+
+footer .map iframe {
+    width: 100%;
+    max-width: 300px;
+    height: 200px; /* Adjust height as needed */
+    border: none;
+}
+
+footer .copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    width: 100%;
+}
+.appointment-btn {
+  background-color: #f26c27; /* Button background color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Padding */
+  font-size: 16px; /* Font size */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background-color 0.3s ease; /* Add transition for hover effect */
+}
+
+.appointment-btn:hover {
+  background-color: #d85a1f;; /* Darker shade for hover */
+}
+.custom-carousel {
+  width: 100%; /* Maintain a responsive width */
+  max-width: 900px; /* Set a maximum width */
+  margin: 0 auto; /* Center the carousel */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.carousel-img {
+  width: 100%; /* Ensure images span the full width of the carousel */
+  height: 500px; /* Make the carousel longer (adjust as needed) */
+  object-fit: cover; /* Crop the image to fit the dimensions without distortion */
+}
+.custom-carousel .carousel-inner {
+  text-align: center; /* Ensure centering if needed */
+}
+
+.custom-carousel {
+  margin: 0 auto; /* Center the carousel */
+}
+
+/* Specific adjustments for the About Us section */
+#AboutUs {
+  padding-top: 5px; /* Adjust for fixed navbar height */
+  padding-bottom: 5px;
+}
+
+.custom-text {
+  width: 100%; /* Same width as the carousel */
+  max-width: 1000px; /* Maximum width */
+  margin: 0 auto; /* Center horizontally */
+  text-align: justify; 
+}
+
+.bg-secondary {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.bg-secondary:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.team-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  width: 250px;
+  perspective: 1000px;
+}
+
+.card_meet {
+  width: 100%;
+  height: 320px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  cursor: pointer;
+}
+
+.card_meet:hover {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.front {
+  background: #fff;
+}
+
+.front img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.front h3 {
+  font-size: 1.2em;
+  margin: 5px 0;
+}
+
+.front p {
+  font-size: 1em;
+  color: #666;
+}
+
+.back {
+  background: #333;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+}
+
+.back p {
+  margin: 10px 0;
+}
+
+.container {
+    max-width: 100% !important;
+    padding: 0 !important;
+}

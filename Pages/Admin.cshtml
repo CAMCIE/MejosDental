@@ -1,0 +1,43 @@
+@page
+@model MejosDental.Pages.AdminModel
+@{
+    ViewData["Title"] = "Admin";
+}
+<h1>Welcome, Admin!</h1>
+<table class="table">
+  <thead><tr><th>Patient</th><th>Appointments</th><th>Actions</th></tr></thead>
+  <tbody>
+    @foreach (var (p, history) in Model.PatientsWithHistory)
+    {
+      <tr>
+        <td>@p.P_name</td>
+        <td>
+          <select id="appt-@p.P_ID">
+            <option value="">Select</option>
+            @foreach (var h in history)
+            {
+              <option value="@h.M_ID">@h.M_Date.ToShortDateString()</option>
+            }
+          </select>
+        </td>
+        <td>
+          <a asp-page="/EditHistory" asp-route-M_ID="@(history.FirstOrDefault()?.M_ID ?? 0)" asp-route-P_ID="@p.P_ID" class="btn btn-sm btn-primary">Edit</a>
+          <form method="post" asp-page="/DeleteHistory" style="display:inline">
+            <input type="hidden" name="P_ID" value="@p.P_ID" />
+            <input type="hidden" name="M_ID" id="del-@p.P_ID" />
+            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+          </form>
+          <a asp-page="/AddHistory" asp-route-P_ID="@p.P_ID" class="btn btn-sm btn-success">Add</a>
+
+          <script>
+            document.querySelector('#appt-@p.P_ID')
+              .addEventListener('change', e => {
+                var v = e.target.value;
+                document.getElementById('del-@p.P_ID').value = v;
+              });
+          </script>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>

@@ -1,0 +1,196 @@
+/* copied the navbar design of homepage for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+#navbar {
+  position: fixed; /* Fixes the navbar at the top */
+  top: 0; /* Aligns the navbar to the top of the page */
+  left: 0; /* Aligns the navbar to the left */
+  width: 100%; /* Ensures the navbar spans the full width of the page */
+  z-index: 1000; /* Ensures the navbar appears above other elements */
+  background: linear-gradient(
+    127deg,
+    rgba(245, 249, 248, 1) 42%,
+    rgb(255, 255, 255) 100%
+  ); /* Gradient background */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow for better visibility */
+  height: 100px;
+}
+
+#navbar .navbar-brand img {
+  width: 80px; /* Adjust logo size */
+  height: auto;
+}
+
+#navbar .navbar-nav .nav-link {
+  color: grey; /* White text color for links */
+  font-size: 15px; /* Increase font size for links */
+  font-weight: bold; /* Make text bold */
+  padding: 10px 15px; /* Add padding to links */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions for hover effect */
+}
+
+/* Active link color */
+#navbar .navbar-nav .nav-link.active {
+  color: #147570; /* Active link color */
+}
+
+/* Hover effect */
+#navbar .navbar-nav .nav-link:hover {
+  color: #147570; /* Change color on hover */
+  transform: scale(1.05); /* Slightly enlarge the link */
+}
+
+/* Navbar toggle button */
+#navbar .navbar-toggler {
+  border-color: #f26c27; /* Border color of the toggle button */
+}
+
+#navbar .navbar-toggler-icon {
+  background-color: #f26c27; /* Toggle icon color */
+}
+
+/* Collapse navbar items */
+#navbar .navbar-collapse {
+  text-align: center; /* Center-align the navbar items */
+}
+
+#navbar .navbar-nav {
+  display: flex;
+  justify-content: center; /* Center the navbar items horizontally */
+}
+
+#navbar .navbar-nav .nav-item {
+  margin: 0 15px; /* Add spacing between nav items */
+}
+
+/* Navbar brand styling */
+#navbar .navbar-brand {
+  font-size: 1.5rem; /* Larger font size for brand */
+  color: white !important; /* Override any other colors */
+}
+/* Adjust Navbar on smaller screens */
+@media (max-width: 768px) {
+  #navbar .navbar-nav {
+    flex-direction: column; /* Stack the navbar items vertically on small screens */
+    margin-top: 10px; /* Space out the items a little bit */
+  }
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  /* display: flex; */
+  /* justify-content: space-around; */
+  align-items: flex-start;
+  padding: 120px;
+  padding-top: 100px;
+}
+
+.appointment-container {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  text-align: center;
+  margin-top: 120px;
+  /* max-width: 600px; */
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.appointment-form {
+  width: 100%;
+}
+
+.appointment-form h1 {
+  margin-bottom: 20px;
+}
+
+.appointment-form p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.mb-3 {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.mb-3 label {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.mb-3 input {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background: none;
+  font-size: 14px;
+  outline: #0e7662;
+  transition: border-color 0.3s;
+}
+
+.mb-3 input:focus {
+  border-color: #0e7662;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.options a {
+  text-decoration: none;
+  color: #0e7662;
+}
+
+.options a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  background-color: #0e7662;
+  color: #ffffff;
+}
+
+.button button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0e7662;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.button button:hover {
+  background-color: #065243;
+  color: #ffffff;
+}
+
+.alert-floating {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  opacity: 0.9;
+}
+
+.alert {
+    z-index: 1050; /* Higher than the navbar */
+    position: fixed;
+}
+

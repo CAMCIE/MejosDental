@@ -1,0 +1,73 @@
+@page
+@model MejosDental.Pages.HistoryModel
+@{
+    ViewData["Title"] = "History";
+    Layout = "_Layout";
+}
+
+
+<div class="container" style="margin-top: 160px;">
+    <div class="row">
+        <div class="col-4 text-bg-light p-3 border border-end-0">
+            <h1>PATIENT INFORMATION</h1>
+            <button id="appointmentbttn" type="button" onclick="location.href='@Url.Page("/Appointment")'">MAKE APPOINTMENT</button>
+        </div>
+        <div class="col-4 rounded-start">
+            <p><strong>NAME:</strong> @Model.Profile?.P_name</p>
+            <p><strong>AGE:</strong> @Model.Profile?.P_age</p>
+            <p><strong>GENDER:</strong> @Model.Profile?.P_sex</p>
+            <p><strong>CONTACT NO.:</strong> @Model.Profile?.P_number</p>
+        </div>
+        <div class="col-4 rounded-end">
+            <p><strong>ADDRESS:</strong> @Model.Profile?.P_address</p>
+            <p><strong>BIRTHDAY:</strong> @Model.Profile?.P_Birth.ToShortDateString()</p>
+            <p><strong>WEIGHT:</strong> @Model.Profile?.P_weight kg</p>
+            <p><strong>HEIGHT:</strong> @Model.Profile?.P_height cm</p>
+        </div>
+    </div>
+
+    <div class="col-12 mt-4">
+        <h1>APPOINTMENT HISTORY</h1>
+    </div>
+
+    <div class="tableContainer">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th>DATE</th>
+                        <th>DESCRIPTION</th>
+                        <th>DENTIST</th>
+                        <th>DIAGNOSIS</th>
+                        <th>TEST PERFORMED</th>
+                        <th>TEST RESULT</th>
+                        <th>PRESCRIBED ACTION</th>
+                        <th>MEDICATION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.MedicalHistory?.Count > 0)
+                    {
+                        foreach (var record in Model.MedicalHistory)
+                        {
+                            <tr>
+                                <td>@record.M_Date.ToShortDateString()</td>
+                                <td>@record.M_description</td>
+                                <td>@record.M_dentist_name</td>
+                                <td>@record.M_diagnosis</td>
+                                <td>@record.M_perform</td>
+                                <td>@record.M_result</td>
+                                <td>@record.M_medication</td>
+                                <td>@record.M_amount_paid</td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr><td colspan="8">No Appointment History yet.</td></tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
