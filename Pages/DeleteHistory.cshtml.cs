@@ -6,21 +6,31 @@ namespace MejosDental.Pages
 {
     public class DeleteHistoryModel : PageModel
     {
-        [BindProperty] public int P_ID { get; set; }
-        [BindProperty] public int M_ID { get; set; }
+        [BindProperty(SupportsGet = true)] public int P_ID { get; set; }
+        [BindProperty(SupportsGet = true)] public int M_ID { get; set; }
 
-        public IActionResult OnPost()
+        public IActionResult OnGet()
         {
-            if (M_ID <= 0) return RedirectToPage("Admin");
+            if (P_ID <= 0 || M_ID <= 0)
+            {
+                TempData["Message"] = "Please select a valid appointment.";
+                return RedirectToPage("Admin");
+            }
 
-            var conn = new MySqlConnection("server=localhost;user=root;password=;database=pup;");
+            using var conn = new MySqlConnection("server=localhost;user=root;password=;database=pup;");
             conn.Open();
-            using var cmd = new MySqlCommand(
-                "DELETE FROM medical_history WHERE P_ID=@pid AND M_ID=@mid", conn);
+
+            string sql = "DELETE FROM medical_history WHERE P_ID=@pid AND M_ID=@mid";
+            using var cmd = new MySqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@pid", P_ID);
             cmd.Parameters.AddWithValue("@mid", M_ID);
-            cmd.ExecuteNonQuery();
+
+            int affected = cmd.ExecuteNonQuery();
             conn.Close();
+
+            TempData["Message"] = affected > 0
+                ? "Medical history deleted successfully."
+                : "No matching record found to delete.";
 
             return RedirectToPage("Admin");
         }

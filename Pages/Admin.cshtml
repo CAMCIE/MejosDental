@@ -3,41 +3,79 @@
 @{
     ViewData["Title"] = "Admin";
 }
-<h1>Welcome, Admin!</h1>
-<table class="table">
-  <thead><tr><th>Patient</th><th>Appointments</th><th>Actions</th></tr></thead>
-  <tbody>
-    @foreach (var (p, history) in Model.PatientsWithHistory)
-    {
-      <tr>
-        <td>@p.P_name</td>
-        <td>
-          <select id="appt-@p.P_ID">
-            <option value="">Select</option>
-            @foreach (var h in history)
-            {
-              <option value="@h.M_ID">@h.M_Date.ToShortDateString()</option>
-            }
-          </select>
-        </td>
-        <td>
-          <a asp-page="/EditHistory" asp-route-M_ID="@(history.FirstOrDefault()?.M_ID ?? 0)" asp-route-P_ID="@p.P_ID" class="btn btn-sm btn-primary">Edit</a>
-          <form method="post" asp-page="/DeleteHistory" style="display:inline">
-            <input type="hidden" name="P_ID" value="@p.P_ID" />
-            <input type="hidden" name="M_ID" id="del-@p.P_ID" />
-            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-          </form>
-          <a asp-page="/AddHistory" asp-route-P_ID="@p.P_ID" class="btn btn-sm btn-success">Add</a>
 
-          <script>
-            document.querySelector('#appt-@p.P_ID')
-              .addEventListener('change', e => {
-                var v = e.target.value;
-                document.getElementById('del-@p.P_ID').value = v;
-              });
-          </script>
-        </td>
-      </tr>
-    }
-  </tbody>
+<h1 class="mb-4">Welcome, Admin!</h1>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Message"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<table class="table table-bordered">
+    <thead class="table-light">
+        <tr>
+            <th>Patient</th>
+            <th>Appointments</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var (p, history) in Model.PatientsWithHistory)
+        {
+            <tr>
+                <td>@p.P_name</td>
+                <td>
+                    <select class="form-select appt-dropdown" data-pid="@p.P_ID">
+                        <option value="">Select</option>
+                        @foreach (var h in history)
+                        {
+                            <option value="@h.M_ID">@h.M_Date.ToShortDateString()</option>
+                        }
+                    </select>
+                </td>
+                <td>
+                    <form method="get" asp-page="/DeleteHistory" id="form-@p.P_ID" style="display:inline;" onsubmit="return confirmDelete(@p.P_ID);">
+                        <input type="hidden" name="P_ID" value="@p.P_ID" />
+                        <input type="hidden" name="M_ID" id="del-@p.P_ID" />
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+
+                    <a asp-page="/EditHistory"
+                       asp-route-M_ID="@(history.FirstOrDefault()?.M_ID ?? 0)"
+                       asp-route-P_ID="@p.P_ID"
+                       class="btn btn-sm btn-primary ms-1">Edit</a>
+
+                    <a asp-page="/AddHistory" asp-route-P_ID="@p.P_ID" class="btn btn-sm btn-success ms-1">Add</a>
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Populate hidden input with selected M_ID
+            document.querySelectorAll(".appt-dropdown").forEach(dropdown => {
+                dropdown.addEventListener("change", function () {
+                    const pid = this.getAttribute("data-pid");
+                    const mid = this.value;
+                    document.getElementById("del-" + pid).value = mid;
+                });
+            });
+        });
+
+        // Validate deletion before submit
+        function confirmDelete(pid) {
+            const mId = document.getElementById('del-' + pid).value;
+            if (!mId) {
+                alert("Please select an appointment to delete.");
+                return false;
+            }
+            return confirm("Are you sure you want to delete this medical history?");
+        }
+    </script>
+}
