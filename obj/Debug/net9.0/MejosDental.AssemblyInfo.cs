@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MejosDental")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b9de320bda5b572ae7bce36622e05730bc0436fe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+62b5fb58f8c65eaec4e3dffb91ee7fbf7ce580d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("MejosDental")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MejosDental")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

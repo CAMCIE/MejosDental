@@ -43,10 +43,8 @@
                         <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                     </form>
 
-                    <a asp-page="/EditHistory"
-                       asp-route-M_ID="@(history.FirstOrDefault()?.M_ID ?? 0)"
-                       asp-route-P_ID="@p.P_ID"
-                       class="btn btn-sm btn-primary ms-1">Edit</a>
+                    <!--  REPLACED STATIC Edit BUTTON WITH DYNAMIC ONE -->
+                    <a id="edit-btn-@p.P_ID" class="btn btn-sm btn-primary ms-1">Edit</a>
 
                     <a asp-page="/AddHistory" asp-route-P_ID="@p.P_ID" class="btn btn-sm btn-success ms-1">Add</a>
                 </td>
@@ -64,6 +62,14 @@
                     const pid = this.getAttribute("data-pid");
                     const mid = this.value;
                     document.getElementById("del-" + pid).value = mid;
+
+                    //  Update the Edit button's href dynamically
+                    const editBtn = document.getElementById("edit-btn-" + pid);
+                    if (editBtn && mid) {
+                        editBtn.setAttribute("href", `/EditHistory/${mid}?P_ID=${pid}`);
+                    } else if (editBtn) {
+                        editBtn.removeAttribute("href");
+                    }
                 });
             });
         });
