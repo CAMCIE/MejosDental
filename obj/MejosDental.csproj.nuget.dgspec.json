@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ceril\\OneDrive\\Desktop\\MejosDental\\MejosDental.csproj": {}
+    "C:\\Users\\acer\\OneDrive\\Desktop\\MejosDental\\MejosDental.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ceril\\OneDrive\\Desktop\\MejosDental\\MejosDental.csproj": {
+    "C:\\Users\\acer\\OneDrive\\Desktop\\MejosDental\\MejosDental.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ceril\\OneDrive\\Desktop\\MejosDental\\MejosDental.csproj",
+        "projectUniqueName": "C:\\Users\\acer\\OneDrive\\Desktop\\MejosDental\\MejosDental.csproj",
         "projectName": "MejosDental",
-        "projectPath": "C:\\Users\\ceril\\OneDrive\\Desktop\\MejosDental\\MejosDental.csproj",
-        "packagesPath": "C:\\Users\\ceril\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ceril\\OneDrive\\Desktop\\MejosDental\\obj\\",
+        "projectPath": "C:\\Users\\acer\\OneDrive\\Desktop\\MejosDental\\MejosDental.csproj",
+        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\acer\\OneDrive\\Desktop\\MejosDental\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ceril\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -82,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

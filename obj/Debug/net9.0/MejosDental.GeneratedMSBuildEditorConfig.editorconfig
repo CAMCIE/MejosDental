@@ -9,73 +9,73 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MejosDental
 build_property.RootNamespace = MejosDental
-build_property.ProjectDir = C:\Users\ceril\OneDrive\Desktop\MejosDental\
+build_property.ProjectDir = C:\Users\acer\OneDrive\Desktop\MejosDental\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\ceril\OneDrive\Desktop\MejosDental
+build_property.MSBuildProjectDirectory = C:\Users\acer\OneDrive\Desktop\MejosDental
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/ceril/OneDrive/Desktop/MejosDental/Pages/AddHistory.cshtml]
+[C:/Users/acer/OneDrive/Desktop/MejosDental/Pages/AddHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkSGlzdG9yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ceril/OneDrive/Desktop/MejosDental/Pages/Admin.cshtml]
+[C:/Users/acer/OneDrive/Desktop/MejosDental/Pages/Admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ceril/OneDrive/Desktop/MejosDental/Pages/Appointment.cshtml]
+[C:/Users/acer/OneDrive/Desktop/MejosDental/Pages/Appointment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwb2ludG1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ceril/OneDrive/Desktop/MejosDental/Pages/DeleteHistory.cshtml]
+[C:/Users/acer/OneDrive/Desktop/MejosDental/Pages/DeleteHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVsZXRlSGlzdG9yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ceril/OneDrive/Desktop/MejosDental/Pages/EditHistory.cshtml]
+[C:/Users/acer/OneDrive/Desktop/MejosDental/Pages/EditHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEhpc3RvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ceril/OneDrive/Desktop/MejosDental/Pages/Error.cshtml]
+[C:/Users/acer/OneDrive/Desktop/MejosDental/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ceril/OneDrive/Desktop/MejosDental/Pages/History.cshtml]
+[C:/Users/acer/OneDrive/Desktop/MejosDental/Pages/History.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGlzdG9yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ceril/OneDrive/Desktop/MejosDental/Pages/Index.cshtml]
+[C:/Users/acer/OneDrive/Desktop/MejosDental/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ceril/OneDrive/Desktop/MejosDental/Pages/Login.cshtml]
+[C:/Users/acer/OneDrive/Desktop/MejosDental/Pages/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ceril/OneDrive/Desktop/MejosDental/Pages/Privacy.cshtml]
+[C:/Users/acer/OneDrive/Desktop/MejosDental/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ceril/OneDrive/Desktop/MejosDental/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/acer/OneDrive/Desktop/MejosDental/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ceril/OneDrive/Desktop/MejosDental/Pages/Signup.cshtml]
+[C:/Users/acer/OneDrive/Desktop/MejosDental/Pages/Signup.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lnbnVwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ceril/OneDrive/Desktop/MejosDental/Pages/_ViewImports.cshtml]
+[C:/Users/acer/OneDrive/Desktop/MejosDental/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ceril/OneDrive/Desktop/MejosDental/Pages/_ViewStart.cshtml]
+[C:/Users/acer/OneDrive/Desktop/MejosDental/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ceril/OneDrive/Desktop/MejosDental/Pages/Shared/_Layout.cshtml]
+[C:/Users/acer/OneDrive/Desktop/MejosDental/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-xefjzmzc8w
