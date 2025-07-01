@@ -9,9 +9,11 @@
 <!-- Optional: Show the patient ID -->
 <p><strong>Patient ID:</strong> @Model.History.P_ID</p>
 
+@*
 <pre>
 @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.History))
 </pre>
+*@
 
 @if (TempData["Error"] != null)
 {
